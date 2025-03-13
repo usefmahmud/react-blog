@@ -6,7 +6,7 @@ export const fetchAllBlogs = async () => {
 }
 
 export const fetchBlogById = async (id: Blog['_id']) => {  
-  return await api.get(`/blogs/${id}`)
+  return (await api.get(`/blogs/${id}`)).data
 }
 
 export const createBlog = async (data: BlogData) => {

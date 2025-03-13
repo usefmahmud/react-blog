@@ -14,7 +14,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   return (
     <div className='p-6 flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm'>
       <div className="mb-1">
-        <Link to={`/post/${blog._id}`}>
+        <Link to={`/blog/${blog._id}`}>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900">{blog.title}</h5>
         </Link>
         <p className='text-[14px] py-1 font-semibold text-gray-500'>{blog.author}</p>
