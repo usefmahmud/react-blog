@@ -8,7 +8,7 @@ export const useAddBlogMutation = () => {
     mutationFn: createBlog,
     onSuccess: () => {
       queryClient.invalidateQueries({ 
-        queryKey: ['get-posts'],
+        queryKey: ['get-blogs'],
       })
     }
   })

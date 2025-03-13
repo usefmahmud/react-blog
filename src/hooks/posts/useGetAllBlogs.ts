@@ -10,7 +10,7 @@ export interface Response {
 
 export const useGetAllBlogs = () => {
   const getBlogsQuery = useQuery<Response>({
-    queryKey: ['get-posts'],
+    queryKey: ['get-blogs'],
     queryFn: fetchAllBlogs,
   })
 

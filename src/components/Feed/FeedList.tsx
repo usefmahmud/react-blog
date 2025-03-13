@@ -16,7 +16,7 @@ const FeedList: React.FC<FeedListProps> = ({
     defaultValue: ''
   })
 
-  if (blogsQuery.isLoading || blogsQuery.isFetching) {
+  if (blogsQuery.isLoading) {
     return (
       <div className='flex flex-col space-y-5'>
         <BlogCardSkeleton />
