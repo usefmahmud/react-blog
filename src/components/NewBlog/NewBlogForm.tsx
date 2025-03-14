@@ -1,12 +1,12 @@
-import { Controller, useForm } from "react-hook-form"
-import Input from "../ui/Input"
-import { BlogData, NewBlogFormSchema } from "../../types"
+import { Controller, useForm } from 'react-hook-form'
+import Input from '../ui/Input'
+import { NewBlogFormSchema } from '../../types'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { NewBlogSchemaValidation } from "../../schemas"
-import { useAddBlogMutation } from "../../hooks/posts/useAddBlogMutation"
-import { useParams } from "react-router-dom"
-import { useGetPostById } from "../../hooks/posts/useGetBlogById"
-import { useEditBlogMutation } from "../../hooks/posts/useEditBlogMutation"
+import { NewBlogSchemaValidation } from '../../schemas'
+import { useAddBlogMutation } from '../../hooks/posts/useAddBlogMutation'
+import { useParams } from 'react-router-dom'
+import { useGetPostById } from '../../hooks/posts/useGetBlogById'
+import { useEditBlogMutation } from '../../hooks/posts/useEditBlogMutation'
 
 interface NewBlogFormProps {
   isEdit?: boolean
@@ -38,7 +38,9 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
       return
     }
 
-    id && editBlogMutation.mutate({id, data})
+    if(id){
+      editBlogMutation.mutate({id, data})
+    }
   } 
 
   if(blogQuery.isLoading){
