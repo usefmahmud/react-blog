@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useDeleteBlogMutation } from '../hooks/posts/useDeleteBlogMutation'
 import { useGetPostById } from '../hooks/posts/useGetBlogById'
 import { Link, useParams } from 'react-router-dom'
@@ -12,7 +13,7 @@ const Blog = () => {
   const deleteMutation = useDeleteBlogMutation()
 
   const handleDelete = () => {
-    deleteMutation.mutateAsync(id ?? '')
+    deleteMutation.mutate(id ?? '')
   }
 
   if(getBlogQuery.isLoading) {
