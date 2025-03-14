@@ -40,7 +40,8 @@ const Blog = () => {
             </button>
           </Link>
           <button 
-            className='flex-1 bg-red-200 py-1 text-lg font-medium rounded-md cursor-pointer hover:bg-red-300'
+            className='flex-1 bg-red-200 py-1 text-lg font-medium rounded-md cursor-pointer hover:bg-red-300 disabled:opacity-50 disabled:cursor-default disabled:hover:bg-red-200'
+            disabled={deleteMutation.isPending}
             onClick={handleDelete}
           >
             Delete
