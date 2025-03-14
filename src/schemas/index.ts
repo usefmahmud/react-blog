@@ -1,13 +1,13 @@
-import * as zod from 'zod'
+import { z } from 'zod'
 
-export const NewBlogSchemaValidation = zod.object({
-  title: zod
+export const NewBlogSchemaValidation = z.object({
+  title: z
     .string()
     .nonempty({ message: 'Title is required.' }),
-  author: zod
+  author: z
     .string()
     .nonempty({ message: 'Author is required.' }),
-  content: zod
+  content: z
     .string()
     .nonempty({ message: 'Content is required.' })
     .max(500, { message: 'Content should not exceed 500 characters.' })

@@ -78,7 +78,7 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
               )}
             />
             {
-              errors.title && <span className="text-sm font-semibold ml-2 text-red-800">Title cannot be empty.</span>
+              errors.title && <span className="text-sm font-semibold ml-2 text-red-800">{errors.title.message}</span>
             }
           </div>
 
@@ -96,7 +96,7 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
               )}
             />
             {
-              errors.author && <span className="text-sm font-semibold ml-2 text-red-800">Author cannot be empty.</span>
+              errors.author && <span className="text-sm font-semibold ml-2 text-red-800">{errors.author.message}</span>
             }
           </div>
 
@@ -116,7 +116,7 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
               )}
             />
             {
-              errors.content && <span className="text-sm font-semibold ml-2 text-red-800">Content cannot be empty.</span>
+              errors.content && <span className="text-sm font-semibold ml-2 text-red-800">{errors.content.message}</span>
             }
           </div>
 
