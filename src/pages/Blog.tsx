@@ -1,4 +1,3 @@
-import toast from 'react-hot-toast'
 import { useDeleteBlogMutation } from '../hooks/posts/useDeleteBlogMutation'
 import { useGetPostById } from '../hooks/posts/useGetBlogById'
 import { Link, useParams } from 'react-router-dom'
