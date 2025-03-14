@@ -1,4 +1,4 @@
-import zod from 'zod'
+import * as zod from 'zod'
 
 export const NewBlogSchemaValidation = zod.object({
   title: zod
