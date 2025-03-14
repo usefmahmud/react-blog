@@ -6,5 +6,10 @@ export type Blog = {
   createdAt: string
 }
 
-export type BlogData = Omit<Blog, 'id' | 'data'>
+export type BlogData = Omit<Blog, 'id' | 'createdAt'>
 
+export interface NewBlogFormSchema { 
+  title: string
+  author: string
+  content: string
+}
