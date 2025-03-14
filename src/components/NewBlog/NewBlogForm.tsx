@@ -32,6 +32,22 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
     resolver: zodResolver(NewBlogSchemaValidation)
   })
 
+  if(id){
+    if(blogQuery.isLoading){
+      return <div>Loading...</div>
+    }
+  
+    if(blogQuery.isError){
+      return <div>Error fetching blog</div>
+    }
+  
+    if(blogQuery.isSuccess){
+      setValue('title', blogQuery.data?.data.blog.title)
+      setValue('author', blogQuery.data?.data.blog.author)
+      setValue('content', blogQuery.data?.data.blog.content)
+    }
+  }
+
   const onSubmit = (data: NewBlogFormSchema) => {
     if(!isEdit){
       newBlogMutation.mutate(data)
@@ -43,19 +59,6 @@ const NewBlogForm: React.FC<NewBlogFormProps> = ({
     }
   } 
 
-  if(blogQuery.isLoading){
-    return <div>Loading...</div>
-  }
-
-  if(blogQuery.isError){
-    return <div>Error fetching blog</div>
-  }
-
-  if(blogQuery.isSuccess){
-    setValue('title', blogQuery.data?.data.blog.title)
-    setValue('author', blogQuery.data?.data.blog.author)
-    setValue('content', blogQuery.data?.data.blog.content)
-  }
 
   return (
     <div>

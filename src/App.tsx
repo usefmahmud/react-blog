@@ -4,11 +4,13 @@ import Feed from './pages/Feed'
 import Blog from './pages/Blog'
 import NewBlog from './pages/NewBlog'
 import EditBlog from './pages/EditBlog'
+import NewBlogButton from './components/NewBlogButton'
 
 const App = () => {
 
   return (
-    <div>
+    <div className='relative'>
+      <NewBlogButton />
       <Routes >
         <Route path="/" element={<Feed />} />
         <Route path="/blog/:id" element={<Blog />} />
